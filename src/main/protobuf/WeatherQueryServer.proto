@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package weatherQuery;
+
+import "WeatherQueryRequest.proto";
+import "WeatherQueryResponse.proto";
+
+service WeatherQueryServer {
+  rpc queryWeather(weatherQuery.WeatherQueryRequest) returns (weatherQuery.WeatherQueryResponse) {}
+}
+
+
+

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package weatherQuery;
+
+message WeatherQueryRequest {
+  string request = 1;
+}
