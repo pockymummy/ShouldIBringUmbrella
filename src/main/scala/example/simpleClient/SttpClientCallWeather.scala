@@ -1,6 +1,6 @@
-package example
+package example.simpleClient
 
-import sttp.client3.{HttpURLConnectionBackend, UriContext, basicRequest}
+import sttp.client3.HttpURLConnectionBackend
 
 object SttpClientCallWeather extends App {
   val parameters = Map("lat" -> "13.745890", "lon" -> "100.538807", "exclude" -> "daily,minute", "appid" -> "739c8ef7068e5b553b1e08219ce008d4")
