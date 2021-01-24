@@ -1,5 +1,6 @@
 package infrastructure
 
+import io.grpc.ServerBuilder
 import simpleWeatherQueryConnector.service.common.SimpleInitializationService
 import weatherQuery.WeatherQueryServer.WeatherQueryServerGrpc
 
@@ -9,5 +10,10 @@ object ServerApp extends App {
   implicit val ec: ExecutionContext = ExecutionContext.global
 
   val simpleService = SimpleInitializationService.load()
-  val grpcService = WeatherQueryServerGrpc.bindService(new WeatherQueryServerImpl(simpleService), ec)
+  val implementedGrpcServerService = new WeatherQueryServerImpl(simpleService)
+  val server = new WeatherQueryGrpcServer(ec,implementedGrpcServerService)
+
+  server.start()
+  server.blockUntilShutdown()
+
 }
