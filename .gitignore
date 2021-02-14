@@ -3,8 +3,8 @@
 /project/target/
 /target/
 /project/project/target/
-/Example/target/
-/Example/helloWorld/target/
-/Example/project/target/
-/Example/project/project/target/
-/Example/project/build.properties
+/example/target/
+/example/helloWorld/target/
+/example/project/target/
+/example/project/project/target/
+/example/project/build.properties

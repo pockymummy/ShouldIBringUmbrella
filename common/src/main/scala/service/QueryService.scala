@@ -1,7 +1,7 @@
-package common
+package service
 
-import weatherQuery.WeatherQueryRequest.WeatherQueryRequest
-import weatherQuery.WeatherQueryResponse.WeatherQueryResponse
+import proto.weatherQuery.WeatherQueryRequest.WeatherQueryRequest
+import proto.weatherQuery.WeatherQueryResponse.WeatherQueryResponse
 
 import scala.concurrent.{ExecutionContext, Future}
 

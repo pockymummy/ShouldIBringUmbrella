@@ -1,9 +1,8 @@
-package common
+package service
 
-
-import weatherQuery.WeatherQueryRequest.WeatherQueryRequest
-import weatherQuery.WeatherQueryResponse.WeatherQueryResponse
-import weatherQuery.WeatherQueryServer.WeatherQueryServerGrpc.WeatherQueryServer
+import proto.weatherQuery.WeatherQueryRequest.WeatherQueryRequest
+import proto.weatherQuery.WeatherQueryResponse.WeatherQueryResponse
+import proto.weatherQuery.WeatherQueryServer.WeatherQueryServerGrpc.WeatherQueryServer
 
 import scala.concurrent.{ExecutionContext, Future}
 

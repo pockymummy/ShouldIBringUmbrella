@@ -2,7 +2,6 @@ package infrastructure
 
 import io.grpc.ServerBuilder
 import simpleWeatherQueryConnector.service.common.SimpleInitializationService
-import weatherQuery.WeatherQueryServer.WeatherQueryServerGrpc
 
 import scala.concurrent.ExecutionContext
 

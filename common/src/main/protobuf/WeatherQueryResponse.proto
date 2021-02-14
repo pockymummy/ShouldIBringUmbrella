@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package weatherQuery;
+package proto.weatherQuery;
 
 message WeatherQueryResponse {
   string response = 1;

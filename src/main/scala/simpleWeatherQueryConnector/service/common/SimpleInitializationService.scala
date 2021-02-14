@@ -1,6 +1,6 @@
 package simpleWeatherQueryConnector.service.common
 
-import common.WeatherQueryService
+import service.WeatherQueryService
 import simpleWeatherQueryConnector.service.query.SimpleQueryService
 
 import scala.concurrent.ExecutionContext

@@ -1,9 +1,9 @@
 package simpleWeatherQueryConnector.service.query
 
-import common.QueryService
+import proto.weatherQuery.WeatherQueryRequest.WeatherQueryRequest
+import proto.weatherQuery.WeatherQueryResponse.WeatherQueryResponse
+import service.QueryService
 import simpleWeatherQueryConnector.service.common.SimpleHttpService
-import weatherQuery.WeatherQueryRequest.WeatherQueryRequest
-import weatherQuery.WeatherQueryResponse.WeatherQueryResponse
 
 import scala.concurrent.{ExecutionContext, Future}
 

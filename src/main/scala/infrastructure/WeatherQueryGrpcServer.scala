@@ -1,8 +1,8 @@
 package infrastructure
 
 import io.grpc.{Server, ServerBuilder}
-import weatherQuery.WeatherQueryServer.WeatherQueryServerGrpc
-import weatherQuery.WeatherQueryServer.WeatherQueryServerGrpc.WeatherQueryServer
+import proto.weatherQuery.WeatherQueryServer.WeatherQueryServerGrpc
+import proto.weatherQuery.WeatherQueryServer.WeatherQueryServerGrpc.WeatherQueryServer
 
 import scala.concurrent.ExecutionContext
 
