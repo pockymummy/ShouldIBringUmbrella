@@ -1,16 +1,11 @@
 package infrastructure
 
 import io.grpc.{Server, ServerBuilder}
-import proto.weatherQuery.WeatherQueryRequest.WeatherQueryRequest
-import proto.weatherQuery.WeatherQueryResponse.WeatherQueryResponse
 import proto.weatherQuery.WeatherQueryServer.WeatherQueryServerGrpc
 import proto.weatherQuery.WeatherQueryServer.WeatherQueryServerGrpc.WeatherQueryServer
 
-import scala.concurrent.{ExecutionContext, Future}
 
-class MyWeather() extends WeatherQueryServer {
-  override def queryWeather(request: WeatherQueryRequest): Future[WeatherQueryResponse] = Future.successful(WeatherQueryResponse("aaa"))
-}
+import scala.concurrent.ExecutionContext
 
 class WeatherQueryGrpcServer(ec: ExecutionContext, weatherQueryServer: WeatherQueryServer) { self =>
   private[this] var server: Server = null
@@ -18,7 +13,7 @@ class WeatherQueryGrpcServer(ec: ExecutionContext, weatherQueryServer: WeatherQu
 
   def start(): Unit = {
     server = ServerBuilder.forPort(8090)
-      .addService(WeatherQueryServerGrpc.bindService(new MyWeather, ec))
+      .addService(WeatherQueryServerGrpc.bindService(weatherQueryServer, ec))
       .build()
       .start()
   }

@@ -8,3 +8,4 @@
 /example/project/target/
 /example/project/project/target/
 /example/project/build.properties
+**/target
