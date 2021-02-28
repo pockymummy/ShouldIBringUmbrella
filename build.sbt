@@ -12,8 +12,7 @@ lazy val commonSettings = Seq(
 
 lazy val shouldIBringUmbrella = project
   .in(file("."))
-  .aggregate(common)
-  .dependsOn(common)
+  .aggregate(common,infrastructure,simpleConnector)
   .settings(
     name := "ShouldIBringUmbrella",
     commonSettings
@@ -25,3 +24,19 @@ lazy val common = project
     name := "common",
     commonSettings
   )
+
+lazy val infrastructure = project
+  .in(file("infrastructure"))
+  .settings(
+    name := "infrastructure",
+    commonSettings
+  )
+  .dependsOn(simpleConnector)
+
+lazy val simpleConnector = project
+  .in(file("simpleConnector"))
+  .settings(
+    name := "simpleConnector",
+    commonSettings
+  )
+  .dependsOn(common)

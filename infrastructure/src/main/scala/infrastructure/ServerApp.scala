@@ -1,6 +1,5 @@
 package infrastructure
 
-import io.grpc.ServerBuilder
 import simpleWeatherQueryConnector.service.common.SimpleInitializationService
 
 import scala.concurrent.ExecutionContext
@@ -14,5 +13,4 @@ object ServerApp extends App {
 
   server.start()
   server.blockUntilShutdown()
-
 }
