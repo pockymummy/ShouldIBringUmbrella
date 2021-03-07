@@ -3,5 +3,50 @@ syntax = "proto3";
 package proto.weatherQuery;
 
 message WeatherQueryResponse {
-  string response = 1;
+  double lat = 1;
+  double lon = 2;
+  string timezone = 3;
+  int32 timezone_offset = 4;
+  Current current = 5;
+  repeated Hourly hourly = 6;
+}
+
+message Current {
+  int64 dt = 1;
+  int64 sunrise = 2;
+  int64 sunset = 3;
+  double temp = 4;
+  double feels_like = 5;
+  int32 pressure = 6;
+  int32 humidity = 7;
+  double dew_point = 8;
+  int32 uvi = 9;
+  int32 clouds = 10;
+  int32 visibility = 11;
+  double wind_speed = 12;
+  int32 wind_deg = 13;
+  Weather weather = 14;
+}
+
+message Weather {
+  int32 id = 1;
+  string main = 2;
+  string description = 3;
+  string icon = 4;
+}
+
+message Hourly {
+  int64 dt = 1;
+  double temp = 2;
+  double feel_like = 3;
+  int32 pressure = 4;
+  int32 humidity = 5;
+  double dew_point = 6;
+  int32 uvi = 7;
+  int32 clouds = 8;
+  int32 visibility = 9;
+  double wind_speed = 10;
+  int32 wind_deg = 11;
+  Weather weather = 12;
+  double pop = 13;
 }

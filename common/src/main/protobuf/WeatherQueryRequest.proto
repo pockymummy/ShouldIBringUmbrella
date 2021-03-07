@@ -3,5 +3,8 @@ syntax = "proto3";
 package proto.weatherQuery;
 
 message WeatherQueryRequest {
-  string request = 1;
+  double lat = 1;
+  double lon = 2;
+  string exclude = 3;
+  string appId = 4;
 }

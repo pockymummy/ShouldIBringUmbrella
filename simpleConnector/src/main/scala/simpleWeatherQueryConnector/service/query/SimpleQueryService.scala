@@ -10,7 +10,7 @@ import scala.concurrent.{ExecutionContext, Future}
 class SimpleQueryService(simpleConnector: SimpleHttpService) extends QueryService{
   override def query(request: WeatherQueryRequest)(implicit ec: ExecutionContext): Future[WeatherQueryResponse] = {
     val rawResponse = simpleConnector.simpleQuery()
-    val wrappedResponse = WeatherQueryResponse(rawResponse)
+    val wrappedResponse = WeatherQueryResponse(timezone = rawResponse)
     Future(wrappedResponse)
   }
 
