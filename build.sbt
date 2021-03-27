@@ -32,11 +32,20 @@ lazy val infrastructure = project
     commonSettings
   )
   .dependsOn(simpleConnector)
+  .dependsOn(seriousConnector)
 
 lazy val simpleConnector = project
   .in(file("simpleConnector"))
   .settings(
     name := "simpleConnector",
+    commonSettings
+  )
+  .dependsOn(common)
+
+lazy val seriousConnector = project
+  .in(file("seriousConnector"))
+  .settings(
+    name := "seriousConnector",
     commonSettings
   )
   .dependsOn(common)
